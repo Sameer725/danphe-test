@@ -1,0 +1,13 @@
+{
+  "name": "@workspace/img-bg",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "scripts": {
+    "serve": "serve"
+  },
+  "author": "sameer",
+  "license": "ISC"
+}

@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container {
+  align-items: center;
+  background-image: url("./assets/bg.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  min-height: 100vh;
+}
+
+.box {
+  background-color: #2a614e;
+  height: 300px;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    justify-content: center;
+  }
+
+  .box {
+    width: 500px;
+  }
+}
