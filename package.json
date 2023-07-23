@@ -11,6 +11,6 @@
   "scripts": {
     "react": "lerna exec --scope @workspace/react -- npm run dev",
     "imgbg": "lerna exec --scope @workspace/img-bg npm run serve",
-    "fizzbuzz": "lerna exec --scope @workspace/fizz-buzz npm run fizz-buzz"
+    "fizzbuzz": "lerna exec --scope @workspace/fizz-buzz npm run fizzbuzz"
   }
 }

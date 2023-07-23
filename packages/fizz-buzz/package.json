@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "fizz-buzz": "node index.js"
+    "fizzbuzz": "node index.js"
   },
   "author": "sameer",
   "license": "ISC"
