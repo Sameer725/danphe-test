@@ -28,12 +28,18 @@ npm install
 
 To run React application.
 
-> `npm run react`
+```sh
+ npm run react
+```
 
 To run Fizz Buzz.
 
-> `npm run fizzbuzz`
+```sh
+ npm run fizzbuzz
+```
 
 To run vanilla img-bg app.
 
-> `npm run img-bg`
+```sh
+npm run img-bg
+```
