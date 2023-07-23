@@ -1,39 +1,38 @@
 import { useContext, useMemo, useReducer, createContext } from "react";
 
 const colors = ["Red", "Blue", "Green", "Black", "Orange"];
-const initialIndex = 0;
+const initialColor = colors[0];
 
 const historySet = new Set();
-historySet.add(initialIndex);
+historySet.add(initialColor);
 
-const initialState = { activeIndex: initialIndex, history: [initialIndex] };
+const initialState = { activeColor: initialColor, history: [initialColor] };
 const reducer = (state, next) => ({ ...state, ...next });
 
 const ColorContext = createContext({
   ...initialState,
-  colors,
   onClick: () => void 0,
 });
 
 export const Provider = ({ children }) => {
-  const [{ activeIndex, history }, dispatch] = useReducer(
+  const [{ activeColor, history }, dispatch] = useReducer(
     reducer,
     initialState
   );
-  const color = useMemo(() => colors[activeIndex], [activeIndex]);
 
   const onClick = () => {
     const nextIndex =
-      activeIndex === 1 ? 2 : Math.floor(Math.random() * colors.length);
-    historySet.add(nextIndex);
+      activeColor === colors[1] ? 2 : Math.floor(Math.random() * colors.length);
 
-    dispatch({ activeIndex: nextIndex, history: [...historySet] });
+    const nextColor = colors[nextIndex];
+
+    historySet.add(nextColor);
+
+    dispatch({ activeColor: nextColor, history: [...historySet] });
   };
 
   return (
-    <ColorContext.Provider
-      value={{ activeIndex, history, onClick, color, colors }}
-    >
+    <ColorContext.Provider value={{ activeColor, history, onClick }}>
       {children}
     </ColorContext.Provider>
   );

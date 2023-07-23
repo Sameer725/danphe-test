@@ -3,15 +3,15 @@ import React from "react";
 import { useColorContext } from "../providers/ColorProvider";
 
 const Button = () => {
-  const { color, onClick } = useColorContext();
+  const { activeColor, onClick } = useColorContext();
 
   return (
     <button
       className="button text"
       onClick={onClick}
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: activeColor }}
     >
-      {color}
+      {activeColor}
     </button>
   );
 };

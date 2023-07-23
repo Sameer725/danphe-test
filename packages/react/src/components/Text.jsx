@@ -12,24 +12,18 @@ const Text = ({ color, isHighlighted, text }) => (
 const HistoryText = () => {
   let seperator = "";
 
-  const { history, activeIndex, colors } = useColorContext();
+  const { history, activeColor } = useColorContext();
 
   return (
     <div className="text">
-      {history.map((colorIndex) => {
-        const isHighlighted =
-          colors.length === history.length && colorIndex === activeIndex;
-        const color = colors[colorIndex];
+      {history.map((color) => {
+        const isHighlighted = color === activeColor;
+
         const component = (
-          <>
+          <React.Fragment key={color}>
             {seperator}
-            <Text
-              isHighlighted={isHighlighted}
-              key={colorIndex}
-              color={color}
-              text={color}
-            />
-          </>
+            <Text isHighlighted={isHighlighted} color={color} text={color} />
+          </React.Fragment>
         );
 
         seperator = ", ";
