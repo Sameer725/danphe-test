@@ -41,5 +41,5 @@ To run Fizz Buzz.
 To run vanilla img-bg app.
 
 ```sh
-npm run img-bg
+npm run imgbg
 ```
